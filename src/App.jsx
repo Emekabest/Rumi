@@ -511,7 +511,14 @@ function App() {
                 Ready to bring your vision to life? Connect with our team today.
               </p>
               <div className="cta-banner-action">
-                <a href="#consultation" className="cta-banner-button" onClick={closeMenu}>
+                <a
+                  href="#contact-us"
+                  className="cta-banner-button"
+                  onClick={(e) => {
+                    e.preventDefault()
+                    navigateTo('contact', 'contact-us')
+                  }}
+                >
                   Start a Conversation →
                 </a>
               </div>
