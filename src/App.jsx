@@ -11,16 +11,28 @@ const heroSlides = [
     id: 1,
     src: toiletImage,
     alt: 'Professional toilet restoration by Rumi',
+    title: 'BUILT TO LAST.',
+    description: 'From vision to finished structure, we deliver construction built with purpose, precision, and lasting value.',
+    ctaText: 'Explore Our Work →',
+    ctaHref: '#services',
   },
   {
     id: 2,
     src: workersBackgroundImage,
     alt: 'Rumi Restoration workers at work',
+    title: 'BUILT BY PEOPLE WHO KNOW HOW.',
+    description: 'Great projects start with great collaboration. Our team brings experience, precision, and purpose to every stage of the build.',
+    ctaText: 'Meet Our Team →',
+    ctaHref: '#about',
   },
   {
     id: 3,
     src: hero3Image,
     alt: 'Stunning completed restoration project',
+    title: 'TURNING VISION INTO REALITY.',
+    description: 'From the ground up, we create spaces designed to serve communities, stand the test of time, and become part of something bigger.',
+    ctaText: 'Start a Project →',
+    ctaHref: '#consultation',
   },
 ]
 
@@ -31,7 +43,7 @@ function App() {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % heroSlides.length)
-    }, 4000) // Change image every 4 seconds
+    }, 8000) // Change image every 5 seconds
 
     return () => clearInterval(timer)
   }, [])
@@ -105,26 +117,18 @@ function App() {
             >
               <img src={slide.src} alt={slide.alt} className="hero-image" />
               <div className="hero-overlay" />
+              <div className="hero-content-wrapper">
+                <div className="hero-content">
+                  <h1 className="hero-title">{slide.title}</h1>
+                  <p className="hero-description">{slide.description}</p>
+                  <a href={slide.ctaHref} className="hero-cta-button" onClick={closeMenu}>
+                    {slide.ctaText}
+                  </a>
+                </div>
+              </div>
             </div>
           ))}
         </div>
-
-        <button
-          type="button"
-          className="hero-control hero-prev"
-          onClick={prevSlide}
-          aria-label="Previous slide"
-        >
-          &#10094;
-        </button>
-        <button
-          type="button"
-          className="hero-control hero-next"
-          onClick={nextSlide}
-          aria-label="Next slide"
-        >
-          &#10095;
-        </button>
 
         <div className="hero-dots" role="tablist" aria-label="Slide navigation">
           {heroSlides.map((slide, index) => (
