@@ -214,6 +214,12 @@
   transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
 
+.site-nav a.active-nav-link {
+  background: rgba(71, 19, 108, 0.1);
+  color: #47136c;
+  font-weight: 700;
+}
+
 .site-nav a:hover,
 .site-nav a:focus-visible {
   background: rgba(178, 111, 9, 0.12);

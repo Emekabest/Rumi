@@ -1,0 +1,523 @@
+/* Restoration Page Styles */
+
+.restoration-page {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Hero Section */
+.resto-hero {
+  position: relative;
+  background: linear-gradient(135deg, #240739 0%, #47136c 55%, #180525 100%);
+  color: #ffffff;
+  padding: 5.5rem 2rem 5rem;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.resto-hero::before {
+  content: '';
+  position: absolute;
+  top: -30%;
+  right: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(178, 111, 9, 0.18) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.resto-hero-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.resto-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #ffd899;
+  background: rgba(178, 111, 9, 0.2);
+  border: 1px solid rgba(178, 111, 9, 0.4);
+  padding: 0.4rem 1.1rem;
+  border-radius: 999px;
+}
+
+.resto-badge-dot {
+  width: 8px;
+  height: 8px;
+  background: #ffb444;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #ffb444;
+}
+
+.resto-hero-title {
+  font-size: clamp(2.3rem, 5vw, 3.8rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 0;
+  color: #ffffff;
+  max-width: 900px;
+}
+
+.resto-hero-tagline {
+  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+  font-weight: 700;
+  color: #f7ba54;
+  margin: 0;
+  letter-spacing: 0.02em;
+}
+
+.resto-hero-description {
+  font-size: clamp(1rem, 2vw, 1.18rem);
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.88);
+  max-width: 820px;
+  margin: 0;
+}
+
+/* Contact / Leadership Card */
+.resto-contact-card {
+  margin-top: 1.5rem;
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 1.25rem;
+  padding: 1.5rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.65rem;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.3);
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.resto-contact-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(178, 111, 9, 0.5);
+}
+
+.resto-contact-leader {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.resto-contact-divider {
+  color: #b26f09;
+}
+
+.resto-contact-role {
+  color: #ffca7a;
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.resto-contact-company {
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.resto-contact-channels {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 0.35rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  width: 100%;
+}
+
+.resto-channel-item {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.98rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  transition: color 0.2s ease;
+}
+
+.resto-channel-item:hover {
+  color: #ffb444;
+}
+
+.resto-channel-dot {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* Service Sections */
+.resto-service-section {
+  padding: 6rem 2rem;
+  background: #ffffff;
+  border-bottom: 1px solid rgba(71, 19, 108, 0.08);
+}
+
+.resto-service-alt {
+  background: #faf8fc;
+}
+
+.resto-service-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.resto-service-reverse {
+  grid-template-columns: 1fr 1.15fr;
+}
+
+.resto-service-reverse .resto-service-content {
+  order: 2;
+}
+
+.resto-service-reverse .resto-service-gallery {
+  order: 1;
+}
+
+.resto-service-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+}
+
+.resto-service-eyebrow {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: #b26f09;
+  background: rgba(178, 111, 9, 0.1);
+  padding: 0.35rem 1rem;
+  border-radius: 999px;
+}
+
+.resto-category-tag {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: 1.35rem;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  color: #47136c;
+}
+
+.resto-service-title {
+  font-size: clamp(2rem, 3.8vw, 2.9rem);
+  font-weight: 800;
+  color: #1a1423;
+  letter-spacing: -0.015em;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.resto-service-intro {
+  font-size: clamp(1.05rem, 1.8vw, 1.2rem);
+  line-height: 1.65;
+  color: #556270;
+  margin: 0;
+}
+
+/* Pillars Grid (What we do vs Why it matters) */
+.resto-pillars-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.resto-pillar-card {
+  background: #ffffff;
+  border: 1px solid rgba(71, 19, 108, 0.1);
+  border-radius: 1rem;
+  padding: 1.5rem 1.4rem;
+  box-shadow: 0 4px 16px rgba(26, 14, 35, 0.04);
+}
+
+.resto-pillar-card-highlight {
+  background: #faf7fd;
+  border-color: rgba(178, 111, 9, 0.25);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.resto-pillar-heading {
+  font-size: 0.92rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #47136c;
+  margin: 0 0 1rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.resto-checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.resto-checklist li {
+  position: relative;
+  padding-left: 1.4rem;
+  font-size: 0.94rem;
+  color: #242f38;
+  line-height: 1.45;
+  font-weight: 600;
+}
+
+.resto-checklist li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #b26f09;
+  font-weight: 800;
+}
+
+.resto-pillar-text {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: #556270;
+  margin: 0 0 1.25rem 0;
+}
+
+.resto-motto-pill {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: 0.88rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: #47136c;
+  background: rgba(71, 19, 108, 0.08);
+  border: 1px solid rgba(71, 19, 108, 0.16);
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+}
+
+/* Action button */
+.resto-action-wrap {
+  margin-top: 0.8rem;
+}
+
+.resto-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.95rem 2.2rem;
+  border-radius: 999px;
+  background: #b26f09;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(178, 111, 9, 0.3);
+  transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
+  font-family: inherit;
+}
+
+.resto-cta-btn:hover,
+.resto-cta-btn:focus-visible {
+  background: #c57f12;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 26px rgba(178, 111, 9, 0.45);
+}
+
+/* Gallery layout for the 2 images per service */
+.resto-service-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.resto-image-frame {
+  position: relative;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  box-shadow: 0 14px 34px rgba(26, 14, 35, 0.1);
+  background: #f1ecf7;
+  height: 270px;
+}
+
+.resto-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.resto-image-frame:hover .resto-img {
+  transform: scale(1.04);
+}
+
+.resto-img-caption {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  background: rgba(26, 14, 35, 0.85);
+  backdrop-filter: blur(6px);
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  letter-spacing: 0.04em;
+}
+
+/* Bottom banner */
+.resto-bottom-banner {
+  background: #ffffff;
+  padding: 5rem 2rem;
+  text-align: center;
+  border-top: 1px solid rgba(71, 19, 108, 0.08);
+}
+
+.resto-bottom-container {
+  max-width: 780px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.resto-bottom-title {
+  font-size: clamp(2rem, 3.8vw, 2.75rem);
+  font-weight: 800;
+  color: #1a1423;
+  margin: 0;
+  letter-spacing: -0.015em;
+}
+
+.resto-bottom-desc {
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  color: #556270;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.resto-bottom-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.resto-outline-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.95rem 2rem;
+  border-radius: 999px;
+  background: transparent;
+  color: #47136c;
+  border: 2px solid #47136c;
+  font-weight: 700;
+  font-size: 0.98rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.resto-outline-btn:hover,
+.resto-outline-btn:focus-visible {
+  background: #47136c;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 980px) {
+  .resto-service-container,
+  .resto-service-reverse {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .resto-service-reverse .resto-service-content {
+    order: 1;
+  }
+
+  .resto-service-reverse .resto-service-gallery {
+    order: 2;
+  }
+
+  .resto-service-gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+  }
+
+  .resto-image-frame {
+    height: 240px;
+  }
+}
+
+@media (max-width: 640px) {
+  .resto-hero {
+    padding: 4rem 1.25rem 3.5rem;
+  }
+
+  .resto-contact-card {
+    padding: 1.25rem 1rem;
+    width: 100%;
+  }
+
+  .resto-service-section {
+    padding: 4rem 1.25rem;
+  }
+
+  .resto-pillars-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .resto-service-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .resto-image-frame {
+    height: 220px;
+  }
+
+  .resto-cta-btn,
+  .resto-outline-btn {
+    width: 100%;
+    max-width: 320px;
+  }
+}
