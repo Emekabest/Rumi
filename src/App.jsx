@@ -14,6 +14,8 @@ import RestorationPage from './RestorationPage'
 import AboutPage from './AboutPage'
 import ServicePage from './ServicePage'
 import ContactPage from './ContactPage'
+import LoginPage from './LoginPage'
+import ConsultationPage from './ConsultationPage'
 import './App.css'
 
 const heroSlides = [
@@ -49,7 +51,7 @@ const heroSlides = [
 function App() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [currentSlide, setCurrentSlide] = useState(0)
-  const [currentPage, setCurrentPage] = useState('home') // 'home' | 'restoration' | 'about' | 'services' | 'contact'
+  const [currentPage, setCurrentPage] = useState('home') // 'home' | 'restoration' | 'about' | 'services' | 'contact' | 'login' | 'consultation'
 
   useEffect(() => {
     // Listen to hash changes for deep linking
@@ -62,6 +64,12 @@ function App() {
         window.scrollTo({ top: 0, behavior: 'smooth' })
       } else if (window.location.hash === '#services') {
         setCurrentPage('services')
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+      } else if (window.location.hash === '#login') {
+        setCurrentPage('login')
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+      } else if (window.location.hash === '#consultation') {
+        setCurrentPage('consultation')
         window.scrollTo({ top: 0, behavior: 'smooth' })
       } else if (window.location.hash === '#contact-us' || window.location.hash === '#contact') {
         setCurrentPage('contact')
@@ -107,6 +115,10 @@ function App() {
       window.location.hash = 'about-us'
     } else if (page === 'services') {
       window.location.hash = 'services'
+    } else if (page === 'login') {
+      window.location.hash = 'login'
+    } else if (page === 'consultation') {
+      window.location.hash = 'consultation'
     } else if (page === 'contact') {
       window.location.hash = 'contact-us'
     } else {
@@ -167,7 +179,13 @@ function App() {
               </li>
             ))}
             <li className="nav-login">
-              <a href="#login" onClick={closeMenu}>
+              <a
+                href="#login"
+                onClick={(e) => {
+                  e.preventDefault()
+                  navigateTo('login', 'login')
+                }}
+              >
                 Login
               </a>
             </li>
@@ -176,13 +194,7 @@ function App() {
                 href="#consultation"
                 onClick={(e) => {
                   e.preventDefault()
-                  if (currentPage !== 'home') {
-                    navigateTo('home', 'consultation')
-                  } else {
-                    closeMenu()
-                    const el = document.getElementById('consultation')
-                    el?.scrollIntoView({ behavior: 'smooth' })
-                  }
+                  navigateTo('consultation', 'consultation')
                 }}
               >
                 Request a Consultation
@@ -196,11 +208,7 @@ function App() {
         <RestorationPage
           onNavigateHome={() => navigateTo('home', 'home')}
           onRequestConsultation={() => {
-            navigateTo('home', 'consultation')
-            setTimeout(() => {
-              const el = document.getElementById('consultation')
-              el?.scrollIntoView({ behavior: 'smooth' })
-            }, 100)
+            navigateTo('consultation', 'consultation')
           }}
         />
       ) : currentPage === 'about' ? (
@@ -209,15 +217,21 @@ function App() {
         <ServicePage
           onNavigateHome={() => navigateTo('home', 'home')}
           onRequestConsultation={() => {
-            navigateTo('home', 'consultation')
-            setTimeout(() => {
-              const el = document.getElementById('consultation')
-              el?.scrollIntoView({ behavior: 'smooth' })
-            }, 100)
+            navigateTo('consultation', 'consultation')
           }}
         />
       ) : currentPage === 'contact' ? (
         <ContactPage onNavigateHome={() => navigateTo('home', 'home')} />
+      ) : currentPage === 'login' ? (
+        <LoginPage
+          onNavigateHome={() => navigateTo('home', 'home')}
+          onNavigateContact={() => navigateTo('contact', 'contact-us')}
+        />
+      ) : currentPage === 'consultation' ? (
+        <ConsultationPage
+          onNavigateHome={() => navigateTo('home', 'home')}
+          onNavigateContact={() => navigateTo('contact', 'contact-us')}
+        />
       ) : (
         <>
           <section className="hero" aria-label="Hero Image Slider">
@@ -244,6 +258,9 @@ function App() {
                           } else if (slide.ctaHref === '#about') {
                             e.preventDefault()
                             navigateTo('about', 'about-us')
+                          } else if (slide.ctaHref === '#consultation') {
+                            e.preventDefault()
+                            navigateTo('consultation', 'consultation')
                           } else {
                             closeMenu()
                           }
@@ -607,7 +624,17 @@ function App() {
               <div className="footer-column">
                 <h3 className="footer-column-heading">GET IN TOUCH</h3>
                 <ul className="footer-links-list">
-                  <li><a href="#consultation" onClick={closeMenu}>Start a Project</a></li>
+                  <li>
+                    <a
+                      href="#consultation"
+                      onClick={(e) => {
+                        e.preventDefault()
+                        navigateTo('consultation', 'consultation')
+                      }}
+                    >
+                      Start a Project
+                    </a>
+                  </li>
                   <li><a href="mailto:info@rumigroup.com">Email</a></li>
                   <li><a href="tel:+10000000000">Phone</a></li>
                 </ul>
