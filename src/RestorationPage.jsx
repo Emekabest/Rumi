@@ -3,21 +3,29 @@ import atticImg1 from './assets/attic-restoration.jpg'
 import atticImg2 from './assets/attic-restoration-2.jpg'
 import waterImg1 from './assets/water-immigration.jpg'
 import waterImg2 from './assets/watter-immigration-2.jpg'
+import floorImage from './assets/floor.jpg'
+import bathroomImage from './assets/bathroom.jpg'
+import dryingImage from './assets/drying.jpg'
+import bathroom2Image from './assets/bathroom2.jpg'
+import waterImBg from './assets/water-im-background.jpg'
 import './RestorationPage.css'
 
 export default function RestorationPage({ onNavigateHome, onRequestConsultation }) {
   return (
     <div className="restoration-page">
       {/* Hero / Intro Header */}
-      <section className="resto-hero">
+      <section
+        className="resto-hero"
+        style={{ backgroundImage: `url(${waterImBg})` }}
+      >
+        <div className="resto-hero-overlay" />
         <div className="resto-hero-container">
-          <div className="resto-badge">
-            <span className="resto-badge-dot" />
-            Specialized Property Mitigation & Restoration
-          </div>
+          <span className="resto-badge">
+            Property Mitigation &amp; Restoration
+          </span>
 
           <h1 className="resto-hero-title">
-            Property Mitigation Water &amp; Fire Damage Recovery
+            Property Mitigation, Water &amp; Fire Damage Recovery
           </h1>
 
           <p className="resto-hero-tagline">
@@ -25,32 +33,20 @@ export default function RestorationPage({ onNavigateHome, onRequestConsultation 
           </p>
 
           <p className="resto-hero-description">
-            Special Cleanup • Hoarding &amp; Odor Removal • Drying • Remediation &amp; Reconstruction — One team from emergency response through recovery, full turnkey in-house.
+            Special cleanup, drying, odor removal, remediation, and reconstruction — one dedicated in-house team from emergency response to complete recovery.
           </p>
 
-          {/* Contact / Leadership Card */}
-          <div className="resto-contact-card">
-            <div className="resto-contact-leader">
-              <span className="resto-contact-name">Jordan Aviles</span>
-              <span className="resto-contact-divider">|</span>
-              <span className="resto-contact-role">President</span>
-            </div>
-
-            <div className="resto-contact-company">
-              RUMi Construction Group LLC.
-            </div>
-
-            <div className="resto-contact-channels">
-              <a href="tel:3127999202" className="resto-channel-item">
-                <span className="resto-channel-icon" aria-hidden="true">📞</span>
-                <span>312.799.9202</span>
-              </a>
-              <span className="resto-channel-dot">•</span>
-              <a href="mailto:Servic@rumiconstructiongroup.com" className="resto-channel-item">
-                <span className="resto-channel-icon" aria-hidden="true">✉️</span>
-                <span>Servic@rumiconstructiongroup.com</span>
-              </a>
-            </div>
+          {/* Clean Contact Bar */}
+          <div className="resto-contact-bar">
+            <span className="resto-contact-name">Jordan Aviles · President</span>
+            <span className="resto-contact-sep" aria-hidden="true">•</span>
+            <a href="tel:3127999202" className="resto-contact-link">
+              312.799.9202
+            </a>
+            <span className="resto-contact-sep" aria-hidden="true">•</span>
+            <a href="mailto:Servic@rumiconstructiongroup.com" className="resto-contact-link">
+              Servic@rumiconstructiongroup.com
+            </a>
           </div>
         </div>
       </section>
@@ -200,8 +196,70 @@ export default function RestorationPage({ onNavigateHome, onRequestConsultation 
         </div>
       </section>
 
-      <section>
-        
+<section className="process-section" id="restoration-process" aria-label="Our Restoration Process">
+        <div className="process-container">
+          <div className="process-header">
+            <span className="process-eyebrow">How We Work</span>
+            <h2 className="process-title">OUR RESTORATION PROCESS</h2>
+            <p className="process-subtitle">
+              A proven, step-by-step methodology built with precision and care to restore your property thoroughly.
+            </p>
+          </div>
+
+          <div className="process-grid">
+            <div className="process-card">
+              <div className="process-card-image-wrapper">
+                <img src={floorImage} alt="Containment and floor protection" className="process-card-image" />
+                <span className="process-step-badge">01</span>
+              </div>
+              <div className="process-card-body">
+                <h3 className="process-step-title">PROTECT</h3>
+                <p className="process-step-description">
+                  We protect your home by establishing containment, covering floors, and sealing doorways.
+                </p>
+              </div>
+            </div>
+
+            <div className="process-card">
+              <div className="process-card-image-wrapper">
+                <img src={bathroomImage} alt="Demolition and removal of damaged materials" className="process-card-image" />
+                <span className="process-step-badge">02</span>
+              </div>
+              <div className="process-card-body">
+                <h3 className="process-step-title">REMOVE</h3>
+                <p className="process-step-description">
+                  We remove water-damaged materials and safely demo affected areas.
+                </p>
+              </div>
+            </div>
+
+            <div className="process-card">
+              <div className="process-card-image-wrapper">
+                <img src={dryingImage} alt="Exposing framing and drying" className="process-card-image" />
+                <span className="process-step-badge">03</span>
+              </div>
+              <div className="process-card-body">
+                <h3 className="process-step-title">DRY</h3>
+                <p className="process-step-description">
+                  We expose framing and affected areas to remove moisture and promote proper drying.
+                </p>
+              </div>
+            </div>
+
+            <div className="process-card">
+              <div className="process-card-image-wrapper">
+                <img src={bathroom2Image} alt="Restored space ready for repair" className="process-card-image" />
+                <span className="process-step-badge">04</span>
+              </div>
+              <div className="process-card-body">
+                <h3 className="process-step-title">RESTORE</h3>
+                <p className="process-step-description">
+                  We prepare the space for repairs and restore your home the right way.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* Back to Home / Consultation banner */}
