@@ -337,6 +337,19 @@ function App() {
         </div>
       </section>
 
+      <section className="testimonial-section" aria-label="Client Testimonial">
+        <div className="testimonial-container">
+          <div className="testimonial-quote-mark" aria-hidden="true">“</div>
+          <blockquote className="testimonial-quote">
+            The team was professional, dependable, and treated our property with care. Amazing job restoration.
+          </blockquote>
+          <div className="testimonial-author">
+            <div className="testimonial-author-line" aria-hidden="true" />
+            <span className="testimonial-author-name">Recent Client</span>
+          </div>
+        </div>
+      </section>
+
       <section className="cta-banner-section" id="consultation" aria-label="Start a project">
         <div className="cta-banner-container">
           <h2 className="cta-banner-title">
