@@ -10,7 +10,7 @@ import bathroom2Image from './assets/bathroom2.jpg'
 import waterImBg from './assets/water-im-background.jpg'
 import './RestorationPage.css'
 
-export default function RestorationPage({ onNavigateHome, onRequestConsultation }) {
+export default function RestorationPage({ onNavigateHome, onRequestConsultation, onPreviewImage }) {
   return (
     <div className="restoration-page">
       {/* Hero / Intro Header */}
@@ -103,7 +103,34 @@ export default function RestorationPage({ onNavigateHome, onRequestConsultation 
           </div>
 
           <div className="resto-service-gallery">
-            <div className="resto-image-frame resto-image-main">
+            <div
+              className="resto-image-frame resto-image-main image-clickable"
+              role="button"
+              tabIndex={0}
+              onClick={() =>
+                onPreviewImage?.({
+                  src: atticImg1,
+                  alt: 'Professional Attic Restoration',
+                  tag: 'Attic Services',
+                  title: 'Inspection & Sanitization',
+                  description:
+                    'Detailed assessment, old insulation removal, and sanitization to eliminate contamination, pests, and moisture.',
+                })
+              }
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault()
+                  onPreviewImage?.({
+                    src: atticImg1,
+                    alt: 'Professional Attic Restoration',
+                    tag: 'Attic Services',
+                    title: 'Inspection & Sanitization',
+                    description:
+                      'Detailed assessment, old insulation removal, and sanitization to eliminate contamination, pests, and moisture.',
+                  })
+                }
+              }}
+            >
               <img
                 src={atticImg1}
                 alt="Professional Attic Restoration"
@@ -111,7 +138,34 @@ export default function RestorationPage({ onNavigateHome, onRequestConsultation 
               />
               <span className="resto-img-caption">Inspection &amp; Sanitization</span>
             </div>
-            <div className="resto-image-frame resto-image-secondary">
+            <div
+              className="resto-image-frame resto-image-secondary image-clickable"
+              role="button"
+              tabIndex={0}
+              onClick={() =>
+                onPreviewImage?.({
+                  src: atticImg2,
+                  alt: 'Clean and insulated attic space',
+                  tag: 'Attic Services',
+                  title: 'Insulated & Sealed Space',
+                  description:
+                    'Properly sealed and re-insulated attic structure designed to improve home comfort and prevent air leakage.',
+                })
+              }
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault()
+                  onPreviewImage?.({
+                    src: atticImg2,
+                    alt: 'Clean and insulated attic space',
+                    tag: 'Attic Services',
+                    title: 'Insulated & Sealed Space',
+                    description:
+                      'Properly sealed and re-insulated attic structure designed to improve home comfort and prevent air leakage.',
+                  })
+                }
+              }}
+            >
               <img
                 src={atticImg2}
                 alt="Clean and insulated attic space"
@@ -176,7 +230,34 @@ export default function RestorationPage({ onNavigateHome, onRequestConsultation 
           </div>
 
           <div className="resto-service-gallery">
-            <div className="resto-image-frame resto-image-main">
+            <div
+              className="resto-image-frame resto-image-main image-clickable"
+              role="button"
+              tabIndex={0}
+              onClick={() =>
+                onPreviewImage?.({
+                  src: waterImg1,
+                  alt: 'Water mitigation and containment',
+                  tag: 'Emergency Mitigation',
+                  title: 'Extraction & Moisture Control',
+                  description:
+                    'Rapid water extraction, containment barriers, and precise moisture profiling to halt water migration immediately.',
+                })
+              }
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault()
+                  onPreviewImage?.({
+                    src: waterImg1,
+                    alt: 'Water mitigation and containment',
+                    tag: 'Emergency Mitigation',
+                    title: 'Extraction & Moisture Control',
+                    description:
+                      'Rapid water extraction, containment barriers, and precise moisture profiling to halt water migration immediately.',
+                  })
+                }
+              }}
+            >
               <img
                 src={waterImg1}
                 alt="Water mitigation and containment"
@@ -184,7 +265,34 @@ export default function RestorationPage({ onNavigateHome, onRequestConsultation 
               />
               <span className="resto-img-caption">Extraction &amp; Moisture Control</span>
             </div>
-            <div className="resto-image-frame resto-image-secondary">
+            <div
+              className="resto-image-frame resto-image-secondary image-clickable"
+              role="button"
+              tabIndex={0}
+              onClick={() =>
+                onPreviewImage?.({
+                  src: waterImg2,
+                  alt: 'Structural drying and restoration in progress',
+                  tag: 'Emergency Mitigation',
+                  title: 'Structural Drying & Recovery',
+                  description:
+                    'Deploying commercial air movers and dehumidifiers to thoroughly eliminate moisture trapped inside wall cavities and subflooring.',
+                })
+              }
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault()
+                  onPreviewImage?.({
+                    src: waterImg2,
+                    alt: 'Structural drying and restoration in progress',
+                    tag: 'Emergency Mitigation',
+                    title: 'Structural Drying & Recovery',
+                    description:
+                      'Deploying commercial air movers and dehumidifiers to thoroughly eliminate moisture trapped inside wall cavities and subflooring.',
+                  })
+                }
+              }}
+            >
               <img
                 src={waterImg2}
                 alt="Structural drying and restoration in progress"
@@ -207,7 +315,34 @@ export default function RestorationPage({ onNavigateHome, onRequestConsultation 
           </div>
 
           <div className="process-grid">
-            <div className="process-card">
+            <div
+              className="process-card image-clickable"
+              role="button"
+              tabIndex={0}
+              onClick={() =>
+                onPreviewImage?.({
+                  src: floorImage,
+                  alt: 'Containment and floor protection',
+                  tag: 'Restoration Step 01',
+                  title: '01 PROTECT',
+                  description:
+                    'We protect your home by establishing containment, covering floors, and sealing doorways.',
+                })
+              }
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault()
+                  onPreviewImage?.({
+                    src: floorImage,
+                    alt: 'Containment and floor protection',
+                    tag: 'Restoration Step 01',
+                    title: '01 PROTECT',
+                    description:
+                      'We protect your home by establishing containment, covering floors, and sealing doorways.',
+                  })
+                }
+              }}
+            >
               <div className="process-card-image-wrapper">
                 <img src={floorImage} alt="Containment and floor protection" className="process-card-image" />
                 <span className="process-step-badge">01</span>
@@ -220,7 +355,34 @@ export default function RestorationPage({ onNavigateHome, onRequestConsultation 
               </div>
             </div>
 
-            <div className="process-card">
+            <div
+              className="process-card image-clickable"
+              role="button"
+              tabIndex={0}
+              onClick={() =>
+                onPreviewImage?.({
+                  src: bathroomImage,
+                  alt: 'Demolition and removal of damaged materials',
+                  tag: 'Restoration Step 02',
+                  title: '02 REMOVE',
+                  description:
+                    'We remove water-damaged materials and safely demo affected areas.',
+                })
+              }
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault()
+                  onPreviewImage?.({
+                    src: bathroomImage,
+                    alt: 'Demolition and removal of damaged materials',
+                    tag: 'Restoration Step 02',
+                    title: '02 REMOVE',
+                    description:
+                      'We remove water-damaged materials and safely demo affected areas.',
+                  })
+                }
+              }}
+            >
               <div className="process-card-image-wrapper">
                 <img src={bathroomImage} alt="Demolition and removal of damaged materials" className="process-card-image" />
                 <span className="process-step-badge">02</span>
@@ -233,7 +395,34 @@ export default function RestorationPage({ onNavigateHome, onRequestConsultation 
               </div>
             </div>
 
-            <div className="process-card">
+            <div
+              className="process-card image-clickable"
+              role="button"
+              tabIndex={0}
+              onClick={() =>
+                onPreviewImage?.({
+                  src: dryingImage,
+                  alt: 'Exposing framing and drying',
+                  tag: 'Restoration Step 03',
+                  title: '03 DRY',
+                  description:
+                    'We expose framing and affected areas to remove moisture and promote proper drying.',
+                })
+              }
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault()
+                  onPreviewImage?.({
+                    src: dryingImage,
+                    alt: 'Exposing framing and drying',
+                    tag: 'Restoration Step 03',
+                    title: '03 DRY',
+                    description:
+                      'We expose framing and affected areas to remove moisture and promote proper drying.',
+                  })
+                }
+              }}
+            >
               <div className="process-card-image-wrapper">
                 <img src={dryingImage} alt="Exposing framing and drying" className="process-card-image" />
                 <span className="process-step-badge">03</span>
@@ -246,7 +435,34 @@ export default function RestorationPage({ onNavigateHome, onRequestConsultation 
               </div>
             </div>
 
-            <div className="process-card">
+            <div
+              className="process-card image-clickable"
+              role="button"
+              tabIndex={0}
+              onClick={() =>
+                onPreviewImage?.({
+                  src: bathroom2Image,
+                  alt: 'Restored space ready for repair',
+                  tag: 'Restoration Step 04',
+                  title: '04 RESTORE',
+                  description:
+                    'We prepare the space for repairs and restore your home the right way.',
+                })
+              }
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault()
+                  onPreviewImage?.({
+                    src: bathroom2Image,
+                    alt: 'Restored space ready for repair',
+                    tag: 'Restoration Step 04',
+                    title: '04 RESTORE',
+                    description:
+                      'We prepare the space for repairs and restore your home the right way.',
+                  })
+                }
+              }}
+            >
               <div className="process-card-image-wrapper">
                 <img src={bathroom2Image} alt="Restored space ready for repair" className="process-card-image" />
                 <span className="process-step-badge">04</span>

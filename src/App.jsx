@@ -212,9 +212,13 @@ function App() {
           onRequestConsultation={() => {
             navigateTo('consultation', 'consultation')
           }}
+          onPreviewImage={(imgData) => setPreviewImage(imgData)}
         />
       ) : currentPage === 'about' ? (
-        <AboutPage onNavigateHome={() => navigateTo('home', 'home')} />
+        <AboutPage
+          onNavigateHome={() => navigateTo('home', 'home')}
+          onPreviewImage={(imgData) => setPreviewImage(imgData)}
+        />
       ) : currentPage === 'services' ? (
         <ServicePage
           onNavigateHome={() => navigateTo('home', 'home')}
@@ -506,7 +510,34 @@ function App() {
               </div>
 
               <div className="process-grid">
-                <div className="process-card">
+                <div
+                  className="process-card image-clickable"
+                  role="button"
+                  tabIndex={0}
+                  onClick={() =>
+                    setPreviewImage({
+                      src: floorImage,
+                      alt: 'Containment and floor protection',
+                      tag: 'Restoration Step 01',
+                      title: '01 PROTECT',
+                      description:
+                        'We protect your home by establishing containment, covering floors, and sealing doorways.',
+                    })
+                  }
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault()
+                      setPreviewImage({
+                        src: floorImage,
+                        alt: 'Containment and floor protection',
+                        tag: 'Restoration Step 01',
+                        title: '01 PROTECT',
+                        description:
+                          'We protect your home by establishing containment, covering floors, and sealing doorways.',
+                      })
+                    }
+                  }}
+                >
                   <div className="process-card-image-wrapper">
                     <img src={floorImage} alt="Containment and floor protection" className="process-card-image" />
                     <span className="process-step-badge">01</span>
@@ -519,7 +550,34 @@ function App() {
                   </div>
                 </div>
 
-                <div className="process-card">
+                <div
+                  className="process-card image-clickable"
+                  role="button"
+                  tabIndex={0}
+                  onClick={() =>
+                    setPreviewImage({
+                      src: bathroomImage,
+                      alt: 'Demolition and removal of damaged materials',
+                      tag: 'Restoration Step 02',
+                      title: '02 REMOVE',
+                      description:
+                        'We remove water-damaged materials and safely demo affected areas.',
+                    })
+                  }
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault()
+                      setPreviewImage({
+                        src: bathroomImage,
+                        alt: 'Demolition and removal of damaged materials',
+                        tag: 'Restoration Step 02',
+                        title: '02 REMOVE',
+                        description:
+                          'We remove water-damaged materials and safely demo affected areas.',
+                      })
+                    }
+                  }}
+                >
                   <div className="process-card-image-wrapper">
                     <img src={bathroomImage} alt="Demolition and removal of damaged materials" className="process-card-image" />
                     <span className="process-step-badge">02</span>
@@ -532,7 +590,34 @@ function App() {
                   </div>
                 </div>
 
-                <div className="process-card">
+                <div
+                  className="process-card image-clickable"
+                  role="button"
+                  tabIndex={0}
+                  onClick={() =>
+                    setPreviewImage({
+                      src: dryingImage,
+                      alt: 'Exposing framing and drying',
+                      tag: 'Restoration Step 03',
+                      title: '03 DRY',
+                      description:
+                        'We expose framing and affected areas to remove moisture and promote proper drying.',
+                    })
+                  }
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault()
+                      setPreviewImage({
+                        src: dryingImage,
+                        alt: 'Exposing framing and drying',
+                        tag: 'Restoration Step 03',
+                        title: '03 DRY',
+                        description:
+                          'We expose framing and affected areas to remove moisture and promote proper drying.',
+                      })
+                    }
+                  }}
+                >
                   <div className="process-card-image-wrapper">
                     <img src={dryingImage} alt="Exposing framing and drying" className="process-card-image" />
                     <span className="process-step-badge">03</span>
@@ -545,7 +630,34 @@ function App() {
                   </div>
                 </div>
 
-                <div className="process-card">
+                <div
+                  className="process-card image-clickable"
+                  role="button"
+                  tabIndex={0}
+                  onClick={() =>
+                    setPreviewImage({
+                      src: bathroom2Image,
+                      alt: 'Restored space ready for repair',
+                      tag: 'Restoration Step 04',
+                      title: '04 RESTORE',
+                      description:
+                        'We prepare the space for repairs and restore your home the right way.',
+                    })
+                  }
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault()
+                      setPreviewImage({
+                        src: bathroom2Image,
+                        alt: 'Restored space ready for repair',
+                        tag: 'Restoration Step 04',
+                        title: '04 RESTORE',
+                        description:
+                          'We prepare the space for repairs and restore your home the right way.',
+                      })
+                    }
+                  }}
+                >
                   <div className="process-card-image-wrapper">
                     <img src={bathroom2Image} alt="Restored space ready for repair" className="process-card-image" />
                     <span className="process-step-badge">04</span>

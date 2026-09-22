@@ -4,7 +4,7 @@ import kitchenImage from './assets/kitchen.png'
 import ourStoryImage from './assets/our-story.jpg'
 import './AboutPage.css'
 
-export default function AboutPage({ onNavigateHome }) {
+export default function AboutPage({ onNavigateHome, onPreviewImage }) {
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -63,10 +63,64 @@ export default function AboutPage({ onNavigateHome }) {
           </div>
 
           <div className="ab-story-gallery">
-            <div className="ab-image-frame ab-image-main">
+            <div
+              className="ab-image-frame ab-image-main image-clickable"
+              role="button"
+              tabIndex={0}
+              onClick={() =>
+                onPreviewImage?.({
+                  src: dinningImage,
+                  alt: 'Dining space craftsmanship',
+                  tag: 'Our Work',
+                  title: 'Detail & Craftsmanship',
+                  description:
+                    'Precision dining room remodel with customized trims, high-end hardwood installation, and architectural attention.',
+                })
+              }
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault()
+                  onPreviewImage?.({
+                    src: dinningImage,
+                    alt: 'Dining space craftsmanship',
+                    tag: 'Our Work',
+                    title: 'Detail & Craftsmanship',
+                    description:
+                      'Precision dining room remodel with customized trims, high-end hardwood installation, and architectural attention.',
+                  })
+                }
+              }}
+            >
               <img src={dinningImage} alt="Dining space craftsmanship" className="ab-img" />
             </div>
-            <div className="ab-image-frame ab-image-secondary">
+            <div
+              className="ab-image-frame ab-image-secondary image-clickable"
+              role="button"
+              tabIndex={0}
+              onClick={() =>
+                onPreviewImage?.({
+                  src: kitchenImage,
+                  alt: 'Modern kitchen build',
+                  tag: 'Our Work',
+                  title: 'Modern Kitchen Build',
+                  description:
+                    'Turnkey kitchen transformation highlighting custom cabinetry, stone surfaces, and efficient culinary layouts.',
+                })
+              }
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault()
+                  onPreviewImage?.({
+                    src: kitchenImage,
+                    alt: 'Modern kitchen build',
+                    tag: 'Our Work',
+                    title: 'Modern Kitchen Build',
+                    description:
+                      'Turnkey kitchen transformation highlighting custom cabinetry, stone surfaces, and efficient culinary layouts.',
+                  })
+                }
+              }}
+            >
               <img src={kitchenImage} alt="Modern kitchen build" className="ab-img" />
             </div>
           </div>
