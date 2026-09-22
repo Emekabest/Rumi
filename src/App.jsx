@@ -4,6 +4,8 @@ import logoText from './assets/logo-text.png'
 import toiletImage from './assets/toilet.jpg'
 import workersBackgroundImage from './assets/workers-background.jpg'
 import hero3Image from './assets/hero-3.jpg'
+import dinningImage from './assets/dinning.png'
+import kitchenImage from './assets/kitchen.png'
 import './App.css'
 
 const heroSlides = [
@@ -184,8 +186,60 @@ function App() {
       </section>
 
 
-      <section>
-        
+      <section className="featured-projects-section" id="services" aria-label="Featured Projects">
+        <div className="featured-projects-container">
+          <div className="featured-header">
+            <span className="featured-eyebrow">Portfolio</span>
+            <h2 className="featured-title">Featured Projects</h2>
+          </div>
+
+          <div className="featured-gallery">
+            <div className="featured-gallery-top">
+              <div className="featured-card featured-card-large">
+                <div className="featured-image-wrapper">
+                  <img src={dinningImage} alt="Dining space craftsmanship" className="featured-image" />
+                </div>
+              </div>
+            </div>
+
+            <div className="featured-gallery-bottom">
+              <div className="featured-card">
+                <div className="featured-image-wrapper">
+                  <img src={toiletImage} alt="Bathroom and toilet renovation" className="featured-image" />
+                </div>
+              </div>
+              <div className="featured-card">
+                <div className="featured-image-wrapper">
+                  <img src={kitchenImage} alt="Modern kitchen build" className="featured-image" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="featured-captions">
+            <div className="featured-caption-item">
+              <span className="featured-caption-number">01</span>
+              <span className="featured-caption-divider">—</span>
+              <span className="featured-caption-text">DETAIL & CRAFTSMANSHIP</span>
+            </div>
+            <div className="featured-caption-item">
+              <span className="featured-caption-number">02</span>
+              <span className="featured-caption-divider">—</span>
+              <span className="featured-caption-text">FORM & FUNCTION</span>
+            </div>
+            <div className="featured-caption-item">
+              <span className="featured-caption-number">03</span>
+              <span className="featured-caption-divider">—</span>
+              <span className="featured-caption-text">QUALITY IN EVERY SPACE</span>
+            </div>
+          </div>
+
+          <div className="featured-cta-container">
+            <a href="#services" className="featured-cta-button" onClick={closeMenu}>
+              Explore Our Work →
+            </a>
+          </div>
+        </div>
       </section>
     </div>
   )
