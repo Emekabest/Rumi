@@ -43,7 +43,7 @@ function App() {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % heroSlides.length)
-    }, 8000) // Change image every 5 seconds
+    }, 11000) // Change image every 5 seconds
 
     return () => clearInterval(timer)
   }, [])
@@ -141,6 +141,33 @@ function App() {
               aria-current={index === currentSlide ? 'true' : 'false'}
             />
           ))}
+        </div>
+      </section>
+
+
+      <section className="stats-section" aria-label="Company Statistics">
+        <div className="stats-container">
+          <div className="stat-card">
+            <span className="stat-number">300<span className="stat-accent">+</span></span>
+            <span className="stat-label">Units</span>
+            <p className="stat-subtext">Restored and delivered with excellence</p>
+          </div>
+
+          <div className="stat-divider" aria-hidden="true" />
+
+          <div className="stat-card">
+            <span className="stat-number">X<span className="stat-accent">+</span></span>
+            <span className="stat-label">Years</span>
+            <p className="stat-subtext">Industry experience and trusted service</p>
+          </div>
+
+          <div className="stat-divider" aria-hidden="true" />
+
+          <div className="stat-card">
+            <span className="stat-number">4</span>
+            <span className="stat-label">States</span>
+            <p className="stat-subtext">Across the Midwest</p>
+          </div>
         </div>
       </section>
     </div>
