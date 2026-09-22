@@ -11,6 +11,7 @@ import bathroomImage from './assets/bathroom.jpg'
 import dryingImage from './assets/drying.jpg'
 import bathroom2Image from './assets/bathroom2.jpg'
 import RestorationPage from './RestorationPage'
+import AboutPage from './AboutPage'
 import './App.css'
 
 const heroSlides = [
@@ -46,13 +47,16 @@ const heroSlides = [
 function App() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [currentSlide, setCurrentSlide] = useState(0)
-  const [currentPage, setCurrentPage] = useState('home') // 'home' | 'restoration'
+  const [currentPage, setCurrentPage] = useState('home') // 'home' | 'restoration' | 'about'
 
   useEffect(() => {
     // Listen to hash changes for deep linking
     const handleHash = () => {
       if (window.location.hash === '#rumi-restoration') {
         setCurrentPage('restoration')
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+      } else if (window.location.hash === '#about-us') {
+        setCurrentPage('about')
         window.scrollTo({ top: 0, behavior: 'smooth' })
       } else if (window.location.hash === '#home' || !window.location.hash) {
         setCurrentPage('home')
@@ -91,6 +95,8 @@ function App() {
       window.location.hash = targetHash
     } else if (page === 'restoration') {
       window.location.hash = 'rumi-restoration'
+    } else if (page === 'about') {
+      window.location.hash = 'about-us'
     } else {
       window.location.hash = 'home'
     }
@@ -100,7 +106,7 @@ function App() {
   const navItems = [
     { label: 'Services', href: '#services', page: 'home' },
     { label: 'Rumi Restoration', href: '#rumi-restoration', page: 'restoration' },
-    { label: 'About', href: '#about', page: 'home' },
+    { label: 'About', href: '#about-us', page: 'about' },
   ]
 
   return (
@@ -137,7 +143,7 @@ function App() {
               <li key={item.label}>
                 <a
                   href={item.href}
-                  className={currentPage === item.page && item.page === 'restoration' ? 'active-nav-link' : ''}
+                  className={currentPage === item.page ? 'active-nav-link' : ''}
                   onClick={(e) => {
                     e.preventDefault()
                     navigateTo(item.page, item.href.replace('#', ''))
@@ -184,6 +190,8 @@ function App() {
             }, 100)
           }}
         />
+      ) : currentPage === 'about' ? (
+        <AboutPage onNavigateHome={() => navigateTo('home', 'home')} />
       ) : (
         <>
           <section className="hero" aria-label="Hero Image Slider">
@@ -475,10 +483,10 @@ function App() {
                   </li>
                   <li>
                     <a
-                      href="#about"
+                      href="#about-us"
                       onClick={(e) => {
                         e.preventDefault()
-                        navigateTo('home', 'about')
+                        navigateTo('about', 'about-us')
                       }}
                     >
                       About
