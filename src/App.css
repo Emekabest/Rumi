@@ -692,3 +692,207 @@
     justify-content: flex-start;
   }
 }
+
+/* Restoration Process Section */
+.process-section {
+  position: relative;
+  background: #faf8fc;
+  padding: 6rem 2rem;
+  border-bottom: 1px solid rgba(71, 19, 108, 0.08);
+}
+
+.process-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+}
+
+.process-header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.process-eyebrow {
+  display: inline-block;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: #b26f09;
+  background: rgba(178, 111, 9, 0.1);
+  padding: 0.35rem 1rem;
+  border-radius: 999px;
+}
+
+.process-title {
+  font-size: clamp(2rem, 3.8vw, 2.85rem);
+  font-weight: 800;
+  color: #1a1423;
+  letter-spacing: -0.015em;
+  margin: 0;
+}
+
+.process-subtitle {
+  font-size: clamp(1rem, 1.8vw, 1.15rem);
+  color: #64748b;
+  max-width: 620px;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.75rem;
+}
+
+.process-card {
+  background: #ffffff;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(26, 14, 35, 0.06);
+  border: 1px solid rgba(71, 19, 108, 0.06);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.35s ease;
+}
+
+.process-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 40px rgba(71, 19, 108, 0.14);
+}
+
+.process-card-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  background: #ece8f2;
+}
+
+.process-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.process-card:hover .process-card-image {
+  transform: scale(1.06);
+}
+
+.process-step-badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: #47136c;
+  color: #ffffff;
+  font-size: 0.82rem;
+  font-weight: 800;
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  letter-spacing: 0.05em;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.process-card-body {
+  padding: 1.6rem 1.4rem 1.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  flex: 1;
+}
+
+.process-step-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #1a1423;
+  margin: 0;
+  letter-spacing: 0.04em;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.process-step-description {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #556270;
+  margin: 0;
+}
+
+/* Process CTA */
+.process-cta-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.process-cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 0.5rem;
+  padding: 0.9rem 2rem;
+  max-width: 100%;
+  border-radius: 999px;
+  background: #b26f09;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: clamp(0.88rem, 2.5vw, 1.05rem);
+  text-decoration: none;
+  box-shadow: 0 6px 20px rgba(178, 111, 9, 0.28);
+  transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
+}
+
+.process-cta-button:hover,
+.process-cta-button:focus-visible {
+  background: #c57f12;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(178, 111, 9, 0.4);
+}
+
+@media (max-width: 1024px) {
+  .process-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .process-section {
+    padding: 4rem 1.25rem;
+  }
+
+  .process-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .process-card-image-wrapper {
+    height: 200px;
+  }
+
+  .process-cta-container {
+    padding-inline: 0.5rem;
+  }
+
+  .process-cta-button {
+    width: 100%;
+    max-width: 320px;
+    padding: 0.85rem 1.2rem;
+    font-size: 0.9rem;
+    white-space: normal;
+    line-height: 1.35;
+  }
+}

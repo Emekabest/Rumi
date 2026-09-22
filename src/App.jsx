@@ -6,6 +6,10 @@ import workersBackgroundImage from './assets/workers-background.jpg'
 import hero3Image from './assets/hero-3.jpg'
 import dinningImage from './assets/dinning.png'
 import kitchenImage from './assets/kitchen.png'
+import floorImage from './assets/floor.jpg'
+import bathroomImage from './assets/bathroom.jpg'
+import dryingImage from './assets/drying.jpg'
+import bathroom2Image from './assets/bathroom2.jpg'
 import './App.css'
 
 const heroSlides = [
@@ -241,6 +245,79 @@ function App() {
           </div>
         </div>
       </section>
+
+      <section className="process-section" id="rumi-restoration" aria-label="Our Restoration Process">
+        <div className="process-container">
+          <div className="process-header">
+            <span className="process-eyebrow">How We Work</span>
+            <h2 className="process-title">OUR RESTORATION PROCESS</h2>
+            <p className="process-subtitle">
+              A proven, step-by-step methodology built with precision and care to restore your property thoroughly.
+            </p>
+          </div>
+
+          <div className="process-grid">
+            <div className="process-card">
+              <div className="process-card-image-wrapper">
+                <img src={floorImage} alt="Containment and floor protection" className="process-card-image" />
+                <span className="process-step-badge">01</span>
+              </div>
+              <div className="process-card-body">
+                <h3 className="process-step-title">PROTECT</h3>
+                <p className="process-step-description">
+                  We protect your home by establishing containment, covering floors, and sealing doorways.
+                </p>
+              </div>
+            </div>
+
+            <div className="process-card">
+              <div className="process-card-image-wrapper">
+                <img src={bathroomImage} alt="Demolition and removal of damaged materials" className="process-card-image" />
+                <span className="process-step-badge">02</span>
+              </div>
+              <div className="process-card-body">
+                <h3 className="process-step-title">REMOVE</h3>
+                <p className="process-step-description">
+                  We remove water-damaged materials and safely demo affected areas.
+                </p>
+              </div>
+            </div>
+
+            <div className="process-card">
+              <div className="process-card-image-wrapper">
+                <img src={dryingImage} alt="Exposing framing and drying" className="process-card-image" />
+                <span className="process-step-badge">03</span>
+              </div>
+              <div className="process-card-body">
+                <h3 className="process-step-title">DRY</h3>
+                <p className="process-step-description">
+                  We expose framing and affected areas to remove moisture and promote proper drying.
+                </p>
+              </div>
+            </div>
+
+            <div className="process-card">
+              <div className="process-card-image-wrapper">
+                <img src={bathroom2Image} alt="Restored space ready for repair" className="process-card-image" />
+                <span className="process-step-badge">04</span>
+              </div>
+              <div className="process-card-body">
+                <h3 className="process-step-title">RESTORE</h3>
+                <p className="process-step-description">
+                  We prepare the space for repairs and restore your home the right way.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="process-cta-container">
+            <a href="#consultation" className="process-cta-button" onClick={closeMenu}>
+              Explore Rumi Restoration →
+            </a>
+          </div>
+        </div>
+      </section>
+
     </div>
   )
 }
