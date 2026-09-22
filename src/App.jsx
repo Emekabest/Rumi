@@ -144,6 +144,18 @@ function App() {
         </div>
       </section>
 
+      <section className="about-intro-section" id="about" aria-label="About Rumi Construction Group">
+        <div className="about-intro-container">
+          <span className="about-intro-eyebrow">Our Story</span>
+          <h2 className="about-intro-title">
+            BUILT ON EXPERIENCE. <span className="text-highlight">DRIVEN BY FAMILY.</span>
+          </h2>
+          <p className="about-intro-text">
+            RUMi Construction Group was built by Ruben and Michelle Aviles with a simple vision: bring experience, integrity, and personal attention to every project.
+          </p>
+        </div>
+      </section>
+
 
       <section className="stats-section" aria-label="Company Statistics">
         <div className="stats-container">
@@ -166,9 +178,14 @@ function App() {
           <div className="stat-card">
             <span className="stat-number">4</span>
             <span className="stat-label">States</span>
-            <p className="stat-subtext">Across the Midwest</p>
+            <p className="stat-subtext">IOWA • WEST VIRGINIA • INDIANA • KENTUCKY</p>
           </div>
         </div>
+      </section>
+
+
+      <section>
+        
       </section>
     </div>
   )
