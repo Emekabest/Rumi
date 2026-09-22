@@ -318,6 +318,103 @@ function App() {
         </div>
       </section>
 
+      <section className="region-section" aria-label="Regional Reach">
+        <div className="region-container">
+          <span className="region-eyebrow">BUILT ACROSS THE REGION</span>
+          <h2 className="region-title">Experience Across the Midwest.</h2>
+          <p className="region-description">
+            With projects spanning <strong>Iowa, West Virginia, Indiana, and Kentucky</strong>, RUMi brings proven construction experience across the region.
+          </p>
+          <div className="region-states-pills">
+            <span className="region-state-pill">Iowa</span>
+            <span className="region-state-dot">·</span>
+            <span className="region-state-pill">West Virginia</span>
+            <span className="region-state-dot">·</span>
+            <span className="region-state-pill">Indiana</span>
+            <span className="region-state-dot">·</span>
+            <span className="region-state-pill">Kentucky</span>
+          </div>
+        </div>
+      </section>
+
+      <section className="cta-banner-section" id="consultation" aria-label="Start a project">
+        <div className="cta-banner-container">
+          <h2 className="cta-banner-title">
+            Let’s Build Something That Lasts.
+          </h2>
+          <p className="cta-banner-subtitle">
+            Ready to bring your vision to life? Connect with our team today.
+          </p>
+          <div className="cta-banner-action">
+            <a href="#consultation" className="cta-banner-button" onClick={closeMenu}>
+              Start a Conversation →
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <footer className="site-footer">
+        <div className="footer-container">
+          <div className="footer-top">
+            <div className="footer-brand-column">
+              <div className="footer-brand-header">
+                <span className="footer-brand-title">RUMi</span>
+                <span className="footer-brand-subtitle">CONSTRUCTION GROUP</span>
+              </div>
+              <p className="footer-brand-tagline">
+                Building with experience.<br />
+                Driven by integrity.<br />
+                Built to last.
+              </p>
+            </div>
+
+            <div className="footer-links-grid">
+              <div className="footer-column">
+                <h3 className="footer-column-heading">EXPLORE</h3>
+                <ul className="footer-links-list">
+                  <li><a href="#home" onClick={closeMenu}>Home</a></li>
+                  <li><a href="#about" onClick={closeMenu}>About</a></li>
+                  <li><a href="#services" onClick={closeMenu}>Our Work</a></li>
+                  <li><a href="#rumi-restoration" onClick={closeMenu}>What We Build</a></li>
+                  <li><a href="#consultation" onClick={closeMenu}>Contact</a></li>
+                </ul>
+              </div>
+
+              <div className="footer-column">
+                <h3 className="footer-column-heading">GET IN TOUCH</h3>
+                <ul className="footer-links-list">
+                  <li><a href="#consultation" onClick={closeMenu}>Start a Project</a></li>
+                  <li><a href="mailto:info@rumigroup.com">Email</a></li>
+                  <li><a href="tel:+10000000000">Phone</a></li>
+                </ul>
+              </div>
+
+              <div className="footer-column">
+                <h3 className="footer-column-heading">AREAS WE SERVE</h3>
+                <ul className="footer-links-list footer-static-list">
+                  <li>Iowa</li>
+                  <li>West Virginia</li>
+                  <li>Indiana</li>
+                  <li>Kentucky</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div className="footer-divider" />
+
+          <div className="footer-bottom">
+            <p className="footer-copyright">
+              © 2026 RUMi Construction Group
+            </p>
+            <div className="footer-legal-links">
+              <a href="#privacy" onClick={closeMenu}>Privacy Policy</a>
+              <a href="#terms" onClick={closeMenu}>Terms</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+
     </div>
   )
 }
