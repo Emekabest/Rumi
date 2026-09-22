@@ -12,6 +12,8 @@ import dryingImage from './assets/drying.jpg'
 import bathroom2Image from './assets/bathroom2.jpg'
 import RestorationPage from './RestorationPage'
 import AboutPage from './AboutPage'
+import ServicePage from './ServicePage'
+import ContactPage from './ContactPage'
 import './App.css'
 
 const heroSlides = [
@@ -47,7 +49,7 @@ const heroSlides = [
 function App() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [currentSlide, setCurrentSlide] = useState(0)
-  const [currentPage, setCurrentPage] = useState('home') // 'home' | 'restoration' | 'about'
+  const [currentPage, setCurrentPage] = useState('home') // 'home' | 'restoration' | 'about' | 'services' | 'contact'
 
   useEffect(() => {
     // Listen to hash changes for deep linking
@@ -57,6 +59,12 @@ function App() {
         window.scrollTo({ top: 0, behavior: 'smooth' })
       } else if (window.location.hash === '#about-us') {
         setCurrentPage('about')
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+      } else if (window.location.hash === '#services') {
+        setCurrentPage('services')
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+      } else if (window.location.hash === '#contact-us' || window.location.hash === '#contact') {
+        setCurrentPage('contact')
         window.scrollTo({ top: 0, behavior: 'smooth' })
       } else if (window.location.hash === '#home' || !window.location.hash) {
         setCurrentPage('home')
@@ -97,6 +105,10 @@ function App() {
       window.location.hash = 'rumi-restoration'
     } else if (page === 'about') {
       window.location.hash = 'about-us'
+    } else if (page === 'services') {
+      window.location.hash = 'services'
+    } else if (page === 'contact') {
+      window.location.hash = 'contact-us'
     } else {
       window.location.hash = 'home'
     }
@@ -104,9 +116,10 @@ function App() {
   }
 
   const navItems = [
-    { label: 'Services', href: '#services', page: 'home' },
+    { label: 'Services', href: '#services', page: 'services' },
     { label: 'Rumi Restoration', href: '#rumi-restoration', page: 'restoration' },
     { label: 'About', href: '#about-us', page: 'about' },
+    { label: 'Contact', href: '#contact-us', page: 'contact' },
   ]
 
   return (
@@ -192,6 +205,19 @@ function App() {
         />
       ) : currentPage === 'about' ? (
         <AboutPage onNavigateHome={() => navigateTo('home', 'home')} />
+      ) : currentPage === 'services' ? (
+        <ServicePage
+          onNavigateHome={() => navigateTo('home', 'home')}
+          onRequestConsultation={() => {
+            navigateTo('home', 'consultation')
+            setTimeout(() => {
+              const el = document.getElementById('consultation')
+              el?.scrollIntoView({ behavior: 'smooth' })
+            }, 100)
+          }}
+        />
+      ) : currentPage === 'contact' ? (
+        <ContactPage onNavigateHome={() => navigateTo('home', 'home')} />
       ) : (
         <>
           <section className="hero" aria-label="Hero Image Slider">
@@ -208,7 +234,21 @@ function App() {
                     <div className="hero-content">
                       <h1 className="hero-title">{slide.title}</h1>
                       <p className="hero-description">{slide.description}</p>
-                      <a href={slide.ctaHref} className="hero-cta-button" onClick={closeMenu}>
+                      <a
+                        href={slide.ctaHref}
+                        className="hero-cta-button"
+                        onClick={(e) => {
+                          if (slide.ctaHref === '#services') {
+                            e.preventDefault()
+                            navigateTo('services', 'services')
+                          } else if (slide.ctaHref === '#about') {
+                            e.preventDefault()
+                            navigateTo('about', 'about-us')
+                          } else {
+                            closeMenu()
+                          }
+                        }}
+                      >
                         {slide.ctaText}
                       </a>
                     </div>
@@ -340,7 +380,14 @@ function App() {
               </div>
 
               <div className="featured-cta-container">
-                <a href="#services" className="featured-cta-button" onClick={closeMenu}>
+                <a
+                  href="#services"
+                  className="featured-cta-button"
+                  onClick={(e) => {
+                    e.preventDefault()
+                    navigateTo('services', 'services')
+                  }}
+                >
                   Explore Our Work →
                 </a>
               </div>
@@ -519,7 +566,7 @@ function App() {
                       href="#services"
                       onClick={(e) => {
                         e.preventDefault()
-                        navigateTo('home', 'services')
+                        navigateTo('services', 'services')
                       }}
                     >
                       Our Work
@@ -538,10 +585,10 @@ function App() {
                   </li>
                   <li>
                     <a
-                      href="#consultation"
+                      href="#contact-us"
                       onClick={(e) => {
                         e.preventDefault()
-                        navigateTo('home', 'consultation')
+                        navigateTo('contact', 'contact-us')
                       }}
                     >
                       Contact
