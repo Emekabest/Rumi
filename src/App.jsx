@@ -56,6 +56,10 @@ function App() {
           </ul>
         </nav>
       </header>
+
+      <section className="hero">
+        
+      </section>
     </div>
   )
 }
