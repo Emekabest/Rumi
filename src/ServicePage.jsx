@@ -5,7 +5,7 @@ import kitchenImg from './assets/kitchen.png'
 import dinningImg from './assets/dinning.png'
 import './ServicePage.css'
 
-export default function ServicePage({ onNavigateHome, onRequestConsultation }) {
+export default function ServicePage({ onNavigateHome, onRequestConsultation, onPreviewImage }) {
   return (
     <div className="service-page">
       {/* Service Hero */}
@@ -48,7 +48,34 @@ export default function ServicePage({ onNavigateHome, onRequestConsultation }) {
           </div>
 
           <div className="service-gallery-grid">
-            <div className="service-gallery-card">
+            <div
+              className="service-gallery-card image-clickable"
+              role="button"
+              tabIndex={0}
+              onClick={() =>
+                onPreviewImage?.({
+                  src: rumi1Img,
+                  alt: 'Custom living and kitchen renovation by RUMi Construction Group',
+                  tag: 'Complete Living Spaces',
+                  title: 'Living & Open Space Remodels',
+                  description:
+                    'Modernized open-concept floorplans with custom carpentry, updated flooring, and architectural detailing.',
+                })
+              }
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault()
+                  onPreviewImage?.({
+                    src: rumi1Img,
+                    alt: 'Custom living and kitchen renovation by RUMi Construction Group',
+                    tag: 'Complete Living Spaces',
+                    title: 'Living & Open Space Remodels',
+                    description:
+                      'Modernized open-concept floorplans with custom carpentry, updated flooring, and architectural detailing.',
+                  })
+                }
+              }}
+            >
               <div className="service-gallery-image-wrap">
                 <img
                   src={rumi1Img}
@@ -63,7 +90,34 @@ export default function ServicePage({ onNavigateHome, onRequestConsultation }) {
               </div>
             </div>
 
-            <div className="service-gallery-card">
+            <div
+              className="service-gallery-card image-clickable"
+              role="button"
+              tabIndex={0}
+              onClick={() =>
+                onPreviewImage?.({
+                  src: rumi6Img,
+                  alt: 'Modern bathroom renovation with sleek vanity and custom finishes',
+                  tag: 'Bathrooms & Finishes',
+                  title: 'Refined Bathroom Remodeling',
+                  description:
+                    'Thoughtful layouts, premium tile and plumbing fixtures, and custom vanities built for daily comfort.',
+                })
+              }
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault()
+                  onPreviewImage?.({
+                    src: rumi6Img,
+                    alt: 'Modern bathroom renovation with sleek vanity and custom finishes',
+                    tag: 'Bathrooms & Finishes',
+                    title: 'Refined Bathroom Remodeling',
+                    description:
+                      'Thoughtful layouts, premium tile and plumbing fixtures, and custom vanities built for daily comfort.',
+                  })
+                }
+              }}
+            >
               <div className="service-gallery-image-wrap">
                 <img
                   src={rumi6Img}
@@ -122,7 +176,34 @@ export default function ServicePage({ onNavigateHome, onRequestConsultation }) {
           </div>
 
           <div className="service-bathroom-visual">
-            <div className="service-bathroom-image-frame">
+            <div
+              className="service-bathroom-image-frame image-clickable"
+              role="button"
+              tabIndex={0}
+              onClick={() =>
+                onPreviewImage?.({
+                  src: rumi6Img,
+                  alt: 'Bathroom renovation project by RUMi',
+                  tag: 'Signature Service',
+                  title: 'Bathroom Renovations',
+                  description:
+                    'Thoughtful layouts, precision tile, and modern fixtures installed with meticulous craftsmanship.',
+                })
+              }
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault()
+                  onPreviewImage?.({
+                    src: rumi6Img,
+                    alt: 'Bathroom renovation project by RUMi',
+                    tag: 'Signature Service',
+                    title: 'Bathroom Renovations',
+                    description:
+                      'Thoughtful layouts, precision tile, and modern fixtures installed with meticulous craftsmanship.',
+                  })
+                }
+              }}
+            >
               <img
                 src={rumi6Img}
                 alt="Bathroom renovation project by RUMi"
@@ -148,7 +229,34 @@ export default function ServicePage({ onNavigateHome, onRequestConsultation }) {
           </div>
 
           <div className="service-capabilities-grid">
-            <div className="service-capability-card">
+            <div
+              className="service-capability-card image-clickable"
+              role="button"
+              tabIndex={0}
+              onClick={() =>
+                onPreviewImage?.({
+                  src: kitchenImg,
+                  alt: 'Kitchen remodel by RUMi',
+                  tag: 'Capabilities',
+                  title: 'Kitchen Remodels',
+                  description:
+                    'Cabinetry, stone countertops, custom islands, and modern layouts designed for cooking and entertaining.',
+                })
+              }
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault()
+                  onPreviewImage?.({
+                    src: kitchenImg,
+                    alt: 'Kitchen remodel by RUMi',
+                    tag: 'Capabilities',
+                    title: 'Kitchen Remodels',
+                    description:
+                      'Cabinetry, stone countertops, custom islands, and modern layouts designed for cooking and entertaining.',
+                  })
+                }
+              }}
+            >
               <div className="service-cap-img-wrap">
                 <img src={kitchenImg} alt="Kitchen build" className="service-cap-img" />
               </div>
@@ -158,7 +266,34 @@ export default function ServicePage({ onNavigateHome, onRequestConsultation }) {
               </div>
             </div>
 
-            <div className="service-capability-card">
+            <div
+              className="service-capability-card image-clickable"
+              role="button"
+              tabIndex={0}
+              onClick={() =>
+                onPreviewImage?.({
+                  src: rumi6Img,
+                  alt: 'Bathroom transformation by RUMi',
+                  tag: 'Capabilities',
+                  title: 'Bathroom Transformations',
+                  description:
+                    'Full tear-outs, walk-in showers, high-end tiling, and energy-efficient fixtures with durable waterproofing.',
+                })
+              }
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault()
+                  onPreviewImage?.({
+                    src: rumi6Img,
+                    alt: 'Bathroom transformation by RUMi',
+                    tag: 'Capabilities',
+                    title: 'Bathroom Transformations',
+                    description:
+                      'Full tear-outs, walk-in showers, high-end tiling, and energy-efficient fixtures with durable waterproofing.',
+                  })
+                }
+              }}
+            >
               <div className="service-cap-img-wrap">
                 <img src={rumi6Img} alt="Bathroom renovation" className="service-cap-img" />
               </div>
@@ -168,7 +303,34 @@ export default function ServicePage({ onNavigateHome, onRequestConsultation }) {
               </div>
             </div>
 
-            <div className="service-capability-card">
+            <div
+              className="service-capability-card image-clickable"
+              role="button"
+              tabIndex={0}
+              onClick={() =>
+                onPreviewImage?.({
+                  src: dinningImg,
+                  alt: 'Complete home renovation by RUMi',
+                  tag: 'Capabilities',
+                  title: 'Complete Home Renovations',
+                  description:
+                    'Whole-home transformations coordinating framing, drywall, electrical, plumbing, and fine finishes.',
+                })
+              }
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault()
+                  onPreviewImage?.({
+                    src: dinningImg,
+                    alt: 'Complete home renovation by RUMi',
+                    tag: 'Capabilities',
+                    title: 'Complete Home Renovations',
+                    description:
+                      'Whole-home transformations coordinating framing, drywall, electrical, plumbing, and fine finishes.',
+                  })
+                }
+              }}
+            >
               <div className="service-cap-img-wrap">
                 <img src={dinningImg} alt="Complete renovation and carpentry" className="service-cap-img" />
               </div>

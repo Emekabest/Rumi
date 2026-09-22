@@ -16,6 +16,7 @@ import ServicePage from './ServicePage'
 import ContactPage from './ContactPage'
 import LoginPage from './LoginPage'
 import ConsultationPage from './ConsultationPage'
+import ImageModal from './ImageModal'
 import './App.css'
 
 const heroSlides = [
@@ -52,6 +53,7 @@ function App() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [currentSlide, setCurrentSlide] = useState(0)
   const [currentPage, setCurrentPage] = useState('home') // 'home' | 'restoration' | 'about' | 'services' | 'contact' | 'login' | 'consultation'
+  const [previewImage, setPreviewImage] = useState(null)
 
   useEffect(() => {
     // Listen to hash changes for deep linking
@@ -219,6 +221,7 @@ function App() {
           onRequestConsultation={() => {
             navigateTo('consultation', 'consultation')
           }}
+          onPreviewImage={(imgData) => setPreviewImage(imgData)}
         />
       ) : currentPage === 'contact' ? (
         <ContactPage onNavigateHome={() => navigateTo('home', 'home')} />
@@ -357,7 +360,34 @@ function App() {
 
               <div className="featured-gallery">
                 <div className="featured-gallery-top">
-                  <div className="featured-card featured-card-large">
+                  <div
+                    className="featured-card featured-card-large image-clickable"
+                    role="button"
+                    tabIndex={0}
+                    onClick={() =>
+                      setPreviewImage({
+                        src: dinningImage,
+                        alt: 'Dining space craftsmanship',
+                        tag: 'Project 01',
+                        title: 'Detail & Craftsmanship',
+                        description:
+                          'Expansive custom interior carpentry, refined finishes, and tailored dining layouts delivered with precision.',
+                      })
+                    }
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault()
+                        setPreviewImage({
+                          src: dinningImage,
+                          alt: 'Dining space craftsmanship',
+                          tag: 'Project 01',
+                          title: 'Detail & Craftsmanship',
+                          description:
+                            'Expansive custom interior carpentry, refined finishes, and tailored dining layouts delivered with precision.',
+                        })
+                      }
+                    }}
+                  >
                     <div className="featured-image-wrapper">
                       <img src={dinningImage} alt="Dining space craftsmanship" className="featured-image" />
                     </div>
@@ -365,12 +395,66 @@ function App() {
                 </div>
 
                 <div className="featured-gallery-bottom">
-                  <div className="featured-card">
+                  <div
+                    className="featured-card image-clickable"
+                    role="button"
+                    tabIndex={0}
+                    onClick={() =>
+                      setPreviewImage({
+                        src: toiletImage,
+                        alt: 'Bathroom and toilet renovation',
+                        tag: 'Project 02',
+                        title: 'Form & Function',
+                        description:
+                          'Modern bathroom restoration combining crisp tile work, updated fixtures, and dependable plumbing.',
+                      })
+                    }
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault()
+                        setPreviewImage({
+                          src: toiletImage,
+                          alt: 'Bathroom and toilet renovation',
+                          tag: 'Project 02',
+                          title: 'Form & Function',
+                          description:
+                            'Modern bathroom restoration combining crisp tile work, updated fixtures, and dependable plumbing.',
+                        })
+                      }
+                    }}
+                  >
                     <div className="featured-image-wrapper">
                       <img src={toiletImage} alt="Bathroom and toilet renovation" className="featured-image" />
                     </div>
                   </div>
-                  <div className="featured-card">
+                  <div
+                    className="featured-card image-clickable"
+                    role="button"
+                    tabIndex={0}
+                    onClick={() =>
+                      setPreviewImage({
+                        src: kitchenImage,
+                        alt: 'Modern kitchen build',
+                        tag: 'Project 03',
+                        title: 'Quality in Every Space',
+                        description:
+                          'Custom kitchen cabinetry, premium stone countertops, and integrated appliances for modern homes.',
+                      })
+                    }
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault()
+                        setPreviewImage({
+                          src: kitchenImage,
+                          alt: 'Modern kitchen build',
+                          tag: 'Project 03',
+                          title: 'Quality in Every Space',
+                          description:
+                            'Custom kitchen cabinetry, premium stone countertops, and integrated appliances for modern homes.',
+                        })
+                      }
+                    }}
+                  >
                     <div className="featured-image-wrapper">
                       <img src={kitchenImage} alt="Modern kitchen build" className="featured-image" />
                     </div>
@@ -666,6 +750,10 @@ function App() {
         </div>
       </footer>
 
+      <ImageModal
+        image={previewImage}
+        onClose={() => setPreviewImage(null)}
+      />
     </div>
   )
 }
